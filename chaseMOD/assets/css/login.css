@@ -1,0 +1,141 @@
+.spinnerWrapper {
+                position: absolute;
+                width: 100%;
+                top: 45%;
+                text-align: center
+            }
+            
+            #chaseSpinnerID.jpui.spinner {
+                display: inline-block;
+                overflow: visible!important;
+                padding-top: 0;
+                margin-top: -50%
+            }
+            
+            #chaseSpinnerID.jpui.spinner:after {
+                content: "\0020";
+                -moz-animation: three-quarters-loader 780ms infinite linear;
+                -webkit-animation: three-quarters-loader 780ms infinite linear;
+                animation: three-quarters-loader 780ms infinite linear;
+                border: 4px solid #ccc;
+                border-right-color: #0092ff;
+                border-radius: 50%;
+                box-sizing: border-box;
+                display: inline-block;
+                position: relative;
+                width: 48px;
+                height: 48px
+            }
+            
+            @media(max-width:991px) {
+                #chaseSpinnerID.jpui.spinner:after {
+                    width: 38px;
+                    height: 38px
+                }
+            }
+            
+            @media(max-width:767px) {
+                #chaseSpinnerID.jpui.spinner:after {
+                    width: 28px;
+                    height: 28px
+                }
+            }
+            
+            #chaseSpinnerID.jpui.spinner:before {
+                content: "Loading";
+                color: transparent;
+                position: absolute;
+                bottom: -1.25rem;
+                font-size: 1rem
+            }
+            
+            #chaseSpinnerID.jpui.spinner:focus {
+                outline: 0
+            }
+            
+            @-moz-keyframes three-quarters-loader {
+                0% {
+                    -moz-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -moz-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+            
+            @-webkit-keyframes three-quarters-loader {
+                0% {
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+            
+            @keyframes three-quarters-loader {
+                0% {
+                    -moz-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    -webkit-transform: rotate(0);
+                    transform: rotate(0)
+                }
+                100% {
+                    -moz-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg)
+                }
+            }
+            
+            #chaseSpinnerID.jpui.spinner .util.accessible-text {
+                position: absolute!important;
+                clip: rect(1px 1px 1px 1px);
+                clip: rect(1px, 1px, 1px, 1px);
+                padding: 0!important;
+                border: 0!important;
+                height: 1px!important;
+                width: 1px!important;
+                overflow: hidden
+            }
+            
+            BODY {
+                overflow-x: hidden;
+                overflow-y: auto;
+                margin: 0
+            }
+            
+            #init,
+            #body {
+                opacity: 0;
+                -webkit-transition: opacity .5s;
+                transition: opacity .5s
+            }
+            
+            #init {
+                z-index: -1;
+                background: #fff;
+                position: fixed;
+                top: 0;
+                left: 0;
+                min-width: 100%;
+                min-height: 110%
+            }
+            
+            .spinner:after,
+            .mask:after {
+                content: '';
+                position: fixed;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: #1c4f82;
+                background: -moz-linear-gradient(top, #1c4f82 0, #2e6ea3 100%);
+                -ms-filter: alpha(opacity=90);
+                filter: alpha(opacity=90);
+            }
+            
